@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-for char in alphabet:
-    if char not in "qe":
-        print(char, end="")
+for i in range(97, 123):
+    if chr(i) != 'q' and chr(i) != 'e':
+        print(chr(i), end="")
