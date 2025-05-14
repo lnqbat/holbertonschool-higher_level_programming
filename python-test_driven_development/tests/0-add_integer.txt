@@ -9,6 +9,12 @@
 >>> add_integer(-10, 12)
 2
 
+>>> add_integer(15, -12)
+3
+
+>>> add_integer(-10, -12)
+22
+
 >>> add_integer(3.7, 2)
 5
 
