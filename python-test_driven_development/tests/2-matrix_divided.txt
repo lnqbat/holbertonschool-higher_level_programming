@@ -34,3 +34,24 @@ Gestion des erreurs
     Traceback (most recent call last):
         ...
     ZeroDivisionError: division by zero
+    
+    >>> matrix_divided([[0, 0], [0, 0]], 2)
+    [[0.0, 0.0], [0.0, 0.0]]
+
+    >>> matrix_divided([[1.5, 2.25], [3.75, 4.0]], 0.5)
+    [[3.0, 4.5], [7.5, 8.0]]
+
+    >>> matrix_divided([[-1, -2], [-3, -4]], 2)
+    [[-0.5, -1.0], [-1.5, -2.0]]
+
+    >>> matrix_divided([[1000000, 2000000], [3000000, 4000000]], 1000000)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided([[1, 2]], 3)
+    [[0.33, 0.67]]
+
+    >>> matrix_divided([[3.333, 4.444], [5.555, 6.666]], 3)
+    [[1.11, 1.48], [1.85, 2.22]]
+
+    >>> matrix_divided([[1]], 2)
+    [[0.5]]
