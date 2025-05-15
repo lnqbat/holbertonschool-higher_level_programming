@@ -12,23 +12,11 @@ def matrix_divided(matrix, div):
     """
 
     if not isinstance(div, (int, float)):
-        raise TypeError('div must be a number')
-    if not div:
-        raise ZeroDivisionError('division by zero')
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
 
-    new = []
-    array = []
-    for row in matrix:
-        if len(row) != len(matrix[0]):
-            raise TypeError('Each row of the matrix must have the same size')
-        if not all(row) and all(matrix[row]) is False:
-            raise TypeError(
-                'matrix must be a matrix (list of lists) of integers/floats')
-        for num in row:
-            if isinstance(num, (int, float)) is False:
-                raise TypeError(
-                    'matrix must be a matrix (list of lists) of integers/floats')
-            array.append(round(num / div, 2))
-        new.append(array)
-        array = []
-    return new
+    try:
+        return [[round(elem / div, 2) for elem in row] for row in matrix]
+    except TypeError:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
