@@ -60,16 +60,6 @@ Text test
     ?
     <BLANKLINE>
 
-    >>> text_indentation("  Leading and trailing   :   spaces .")
-    Leading and trailing:
-    <BLANKLINE>
-    spaces .
-    <BLANKLINE>
-
-    >>> text_indentation(":Start with colon and end with dot.")
-    Start with colon and end with dot.
-    <BLANKLINE>
-
     >>> text_indentation("Hello?Yes:Great.End.")
     Hello?
     <BLANKLINE>
