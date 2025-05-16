@@ -10,6 +10,7 @@ Integer
     ####
     ####
     ####
+    ####
 
     >>> print_square(1)
     #
