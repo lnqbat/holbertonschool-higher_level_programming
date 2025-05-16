@@ -42,7 +42,7 @@ Text test
 
     >>> text_indentation("")
     
-    >>> text_indentation("...Multiple dots. And: multiple colons: and questions??")
+    >>> text_indentation("...Multiple dots. And: multiple column: and questions??")
     .
     <BLANKLINE>
     .
