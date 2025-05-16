@@ -1,0 +1,18 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Text test
+---------
+
+.. code-block:: python
+
+    >>> text_indentation("Hi. Are you okay? Really: good.")
+    Hi.
+    <BLANKLINE>
+    Are you okay?
+    <BLANKLINE>
+    Really:
+    <BLANKLINE>
+    good.
+    <BLANKLINE>
+
+    
