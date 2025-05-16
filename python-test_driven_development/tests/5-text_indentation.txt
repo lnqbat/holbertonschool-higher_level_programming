@@ -15,4 +15,31 @@ Text test
     good.
     <BLANKLINE>
 
-    
+    >>> text_indentation("Coucou .")
+    Coucou .
+    <BLANKLINE>
+
+    >>> text_indentation(".   :   ?")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+
+    >>> text_indentation("No punctuation here")
+    No punctuation here
+
+
+    >>> text_indentation("First.    Second?   Third:   Done.")
+    First.
+    <BLANKLINE>
+    Second?
+    <BLANKLINE>
+    Third:
+    <BLANKLINE>
+    Done.
+    <BLANKLINE>
+
+    >>> text_indentation("")
