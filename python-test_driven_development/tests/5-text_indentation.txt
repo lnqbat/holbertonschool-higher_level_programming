@@ -27,10 +27,8 @@ Text test
     ?
     <BLANKLINE>
 
-
     >>> text_indentation("No punctuation here")
     No punctuation here
-
 
     >>> text_indentation("First.    Second?   Third:   Done.")
     First.
@@ -43,3 +41,41 @@ Text test
     <BLANKLINE>
 
     >>> text_indentation("")
+    
+    >>> text_indentation("...Multiple dots. And: multiple colons: and questions??")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    Multiple dots.
+    <BLANKLINE>
+    And:
+    <BLANKLINE>
+    multiple colons:
+    <BLANKLINE>
+    and questions?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+    >>> text_indentation("  Leading and trailing   :   spaces .")
+    Leading and trailing:
+    <BLANKLINE>
+    spaces .
+    <BLANKLINE>
+
+    >>> text_indentation(":Start with colon and end with dot.")
+    Start with colon and end with dot.
+    <BLANKLINE>
+
+    >>> text_indentation("Hello?Yes:Great.End.")
+    Hello?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    Great.
+    <BLANKLINE>
+    End.
+    <BLANKLINE>
