@@ -69,3 +69,18 @@ Text test
     <BLANKLINE>
     End.
     <BLANKLINE>
+
+    >>> text_indentation("1.6")
+    1.
+    <BLANKLINE>
+    6
+
+    >>> text_indentation("test", ".test")
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+    >>> text_indentation(["hello."])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
