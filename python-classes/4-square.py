@@ -13,14 +13,14 @@ class Square:
         A square init size.
         """
         self.size = size
-    
+
     @property
     def size(self):
         """
         Retrieves the size.
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
