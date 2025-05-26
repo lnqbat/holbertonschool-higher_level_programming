@@ -13,5 +13,9 @@ class MyList(list):
         """
         Prints the list, but sorted
         """
-        copy = sorted(self)
-        print(copy)
+        Newlist = self.copy()
+        for i in range(len(Newlist)):
+            for j in range(i + 1, len(Newlist)):
+                if Newlist[i] > Newlist[j]:
+                    Newlist[i], Newlist[j] = Newlist[j], Newlist[i]
+        print(Newlist)
