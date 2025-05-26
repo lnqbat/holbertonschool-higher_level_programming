@@ -23,3 +23,5 @@
 
 >>> print(MyList())
 []
+>>> MyList().print_sorted()
+[]
