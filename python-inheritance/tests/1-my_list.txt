@@ -8,9 +8,13 @@
 
 >>> my_list.append(1)
 
+>>> my_list.append(-5)
+
 >>> my_list.append(4)
 
 >>> my_list.append(2)
+
+>>> my_list.append(-1)
 
 >>> my_list.append(3)
 
@@ -22,3 +26,6 @@
 
 >>> print(my_list)
 [5, 1, 4, 2, 3]
+
+>>> MyList().print_sorted()
+[]
