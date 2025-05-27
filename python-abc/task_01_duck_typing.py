@@ -1,8 +1,9 @@
-from abc import ABC, abstractmethod
-from math import pi
 """
 Shapes, Interfaces, and Duck Typing.
 """
+from abc import ABC, abstractmethod
+from math import pi
+
 
 
 class Shape(ABC):
@@ -29,7 +30,7 @@ class Circle(Shape):
     A class Circle.
     """
     def __init__(self, radius):
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         """
