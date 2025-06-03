@@ -17,12 +17,12 @@ class Student:
         """
         That retrieves a dictionary representation
         """
-        if type(attrs) == list:
-                result = {}
-                for attr in attrs:
-                    if type(attr) == str:
-                        if attr in self.__dict__:
-                            result[attr] = self.__dict__[attr]
-                return result
+        if isinstance(attrs, list):
+            result = {}
+            for attr in attrs:
+                if isinstance(attr, str):
+                    if attr in self.__dict__:
+                        result[attr] = self.__dict__[attr]
+            return result
         else:
             return self.__dict__
