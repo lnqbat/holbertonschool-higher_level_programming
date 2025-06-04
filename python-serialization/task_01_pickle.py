@@ -29,7 +29,7 @@ class CustomObject:
 
     def serialize(self, filename):
         with open(filename, 'wb') as f:
-            pickle.dump(self, f)
+            pickle.dump(self.__dict__, f)
 
     def deserialize(cls, filename):
         try:
