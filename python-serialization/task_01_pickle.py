@@ -11,8 +11,6 @@ class CustomObject:
     """
     Define a class
     """
-    
-    
     def __init__(self, name, age, is_student):
         """
         Ini class.
@@ -20,7 +18,6 @@ class CustomObject:
         self.name = name
         self.age = age
         self.is_student = is_student
-
 
     def display(self):
         """
@@ -30,11 +27,9 @@ class CustomObject:
         print("Age:", self.age)
         print("Is Student:", self.is_student)
 
-
     def serialize(self, filename):
-       with open(filename, 'wb') as f:
-           pickle.dump(self, f)
-
+        with open(filename, 'wb') as f:
+            pickle.dump(self, f)
 
     def deserialize(cls, filename):
         try:
