@@ -37,6 +37,6 @@ class CustomObject:
                 obj = pickle.dump(f)
                 if isinstance(obj, cls):
                     return obj
-        except Exception:
+        except FileNotFoundError:
             pass
         return None
