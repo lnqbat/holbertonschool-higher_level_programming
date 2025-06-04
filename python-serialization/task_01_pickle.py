@@ -38,5 +38,4 @@ class CustomObject:
                 if isinstance(obj, cls):
                     return obj
         except FileNotFoundError:
-            pass
-        return None
+            return None
