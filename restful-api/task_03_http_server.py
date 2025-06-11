@@ -7,18 +7,18 @@ PORT = 8000
 
 class MyRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        self.path
+
         if self.path == "/":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content_Type", "text/plain; charset=utf-8")
             self.end_headers()
             message = "Hello, this is a simple API!"
             self.wfile.write(message.encode("utf-8"))
 
         elif self.path == "/data":
             self.send_response(200)
-            self.send_header("Content-Type", "application/json")
-            self.send_header()
+            self.send_header("Content_Type", "application/json")
+            self.end_headers()
             data = {
                 "name": "John",
                 "age": 30,
@@ -28,14 +28,14 @@ class MyRequestHandler(http.server.BaseHTTPRequestHandler):
 
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
-            self.send_header()
+            self.send_header("Content_Type", "text/plain; charset=utf-8")
+            self.end_headers()
             self.wfile.write(b"OK")
 
         elif self.path == "/info":
             self.send_response(200)
             self.send_header("Content_Type", "application/json")
-            self.send_header()
+            self.end_headers()
             info = {
                 "version": "1.0",
                 "description": "A simple API built with http.server"
@@ -44,8 +44,8 @@ class MyRequestHandler(http.server.BaseHTTPRequestHandler):
 
         else:
             self.send_response(404)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
-            self.send_header()
+            self.send_header("Content_Type", "text/plain; charset=utf-8")
+            self.end_headers()
             self.wfile.write(b"Endpoint not found")
 
 with socketserver.TCPServer(("", PORT), MyRequestHandler) as httpd:
