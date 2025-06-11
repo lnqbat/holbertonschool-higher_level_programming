@@ -23,7 +23,7 @@ class MyRequestHandler(http.server.BaseHTTPRequestHandler):
                 "name": "John",
                 "age": 30,
                 "city": "New York"
-                }
+            }
             self.wfile.write(json.dumps(data).encode("utf-8"))
 
         elif self.path == "/status":
@@ -39,7 +39,7 @@ class MyRequestHandler(http.server.BaseHTTPRequestHandler):
             info = {
                 "version": "1.0",
                 "description": "A simple API built with http.server"
-                }
+            }
             self.wfile.write(json.dumps(info).encode("utf-8"))
 
         else:
