@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-script 14-model_city_fetch_by_state.py
-that prints all City objects from the database hbtn_0e_14_usa
+Script that prints all City objects from the database hbtn_0e_14_usa
 """
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
