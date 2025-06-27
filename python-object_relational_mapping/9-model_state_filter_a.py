@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
+
 if __name__ == "__main__":
     user = sys.argv[1]
     passwd = sys.argv[2]
@@ -24,6 +25,6 @@ if __name__ == "__main__":
         .filter(State.name.like('%a%'))\
         .order_by(State.id)\
         .all()\
-        
+
     for state in state_with_a:
         print("{}: {}".format(state.id, state.name))
