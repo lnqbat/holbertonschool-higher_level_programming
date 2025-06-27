@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that takes in an argument and displays all values in the states table
+Script that takes in an argument and displays all values in the states
 """
 import MySQLdb
 import sys
@@ -18,9 +18,12 @@ if __name__ == "__main__":
         passwd=password,
         db=database
     )
+
     cur = db.cursor()
+
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query)
+
+    cur.execute(query, (state_name,))
 
     for row in cur.fetchall():
         print(row)
