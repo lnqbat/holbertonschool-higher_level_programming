@@ -2,9 +2,9 @@
 """
 Script that takes in an argument and displays all values in the states table
 """
-
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     username = sys.argv[1]
@@ -22,9 +22,8 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = ("SELECT * FROM states WHERE BINARY name = '{}' "
-        "ORDER BY id ASC".format(state_name)
-    )
+    query = ("""SELECT * FROM states WHERE BINARY name = '{}'
+        ORDER BY id ASC""".format(state_name))
     cur.execute(query)
     rows = cur.fetchall()
 
