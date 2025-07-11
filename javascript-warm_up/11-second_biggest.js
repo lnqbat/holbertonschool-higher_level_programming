@@ -1,16 +1,11 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
 
-const res = argv.reduce(
-  (acc, num) => {
-    if (num > acc[0]) {
-      acc[1] = acc[0];
-      acc[0] = num;
-    } else if (num > acc[1] && num < acc[0]) {
-      acc[1] = num;
-    }
-    return acc;
-  },
-  [0, 0]
-);
-console.log(res[1]);
+const args = process.argv.slice(2).map(Number);
+const uni = [...new Set(args)];
+uni.sort((a, b) => b - a);
+
+if (uni.length <= 1) {
+  console.log(0);
+} else {
+  console.log(uni[1]);
+}
