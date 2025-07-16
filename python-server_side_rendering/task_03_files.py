@@ -26,6 +26,7 @@ def items():
 @app.route('/products')
 def products():
     source = request.args.get("source", "json")
+    prod_id = request.args.get("id")
     products_list = []
     error = None
 
@@ -52,6 +53,19 @@ def products():
     except Exception:
         error = f"Erreur lors de la lecture du fichier {source.upper()}."
         products_list = []
+
+    if prod_id and not error:
+        try:
+            pid = int(prod_id)
+            filtered = [p for p in products_list if int(p["id"]) == pid]
+            if filtered:
+                products_list = filtered
+            else:
+                error = "Product not found"
+                products_list = []
+        except Exception:
+            error = "Invalid id value"
+            products_list = []
 
     return render_template('product_display.html', products=products_list, error=error)
 
