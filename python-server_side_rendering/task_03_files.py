@@ -33,7 +33,7 @@ def products():
         if source == "json":
             with open('products.json', encoding='utf-8') as f:
                 data = json.load(f)
-            products_list = data.get("products", [])
+            products_list = data
         elif source == "csv":
             with open('products.csv', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
