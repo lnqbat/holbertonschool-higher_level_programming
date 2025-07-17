@@ -5,25 +5,6 @@ import sqlite3
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-@app.route('/items')
-def items():
-    with open('items.json') as f:
-        data = json.load(f)
-    items_list = data.get("items", [])
-    return render_template('items.html', items=items_list)
-
 def read_products_from_sqlite():
     products = []
     try:
@@ -38,6 +19,8 @@ def read_products_from_sqlite():
                 "category": row[2],
                 "price": float(row[3])
             })
+    except Exception:
+        raise
     finally:
         if 'conn' in locals():
             conn.close()
@@ -53,8 +36,7 @@ def products():
     try:
         if source == "json":
             with open('products.json', encoding='utf-8') as f:
-                data = json.load(f)
-            products_list = data
+                products_list = json.load(f)
         elif source == "csv":
             with open('products.csv', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
@@ -67,11 +49,17 @@ def products():
                     }
                     for row in reader
                 ]
+        elif source == "sql":
+            try:
+                products_list = read_products_from_sqlite()
+            except Exception:
+                error = "Error read DB SQLite."
+                products_list = []
         else:
             error = "Wrong source"
             products_list = []
     except Exception:
-        error = f"Erreur lors de la lecture du fichier {source.upper()}."
+        error = f"Error read files {source.upper()}."
         products_list = []
 
     if prod_id and not error:
